@@ -1,11 +1,6 @@
 package com.interblocks;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
+public class App {
     private String message;
 
     // Constructor

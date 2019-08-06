@@ -8,8 +8,7 @@ import org.testng.annotations.*;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-{
+public class AppTest {
     String message = "Jade";
     App messageUtil = new App(message);
 
