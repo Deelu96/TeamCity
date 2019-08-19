@@ -24,9 +24,10 @@ public class AppTest {
         try {
             prop.load(new FileInputStream(log4JPropertyFile));
             PropertyConfigurator.configure(prop);
-        } catch (IOException e) {
+            log = Logger.getLogger("TestStep");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        log = Logger.getLogger("TestStep");
     }
 
     @Test
