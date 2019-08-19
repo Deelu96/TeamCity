@@ -7,7 +7,6 @@ import org.testng.annotations.*;
 import org.apache.log4j.*;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Properties;
 
 /**
@@ -18,15 +17,15 @@ public class AppTest {
     App messageUtil = new App(message);
     private static Logger log = null;
 
-    public AppTest(){
-        String log4JPropertyFile =System.getProperty("user.dir")+ "\\src\\log4j.properties";
+    public AppTest() {
+        String log4JPropertyFile = System.getProperty("user.dir") + "\\src\\log4j.properties";
         Properties prop = new Properties();
         try {
             prop.load(new FileInputStream(log4JPropertyFile));
             PropertyConfigurator.configure(prop);
             log = Logger.getLogger("TestStep");
         } catch (Exception e) {
-            e.printStackTrace();
+            log.debug(e);
         }
     }
 
