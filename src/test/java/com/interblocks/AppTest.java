@@ -6,13 +6,28 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import org.apache.log4j.*;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 /**
  * Unit test for simple App.
  */
 public class AppTest {
     String message = "Jade";
     App messageUtil = new App(message);
-    private static Logger log;
+    private static Logger log = null;
+
+    public AppTest(){
+        String log4JPropertyFile =System.getProperty("user.dir")+ "\\src\\log4j.properties";
+        Properties prop = new Properties();
+        try {
+            prop.load(new FileInputStream(log4JPropertyFile));
+            PropertyConfigurator.configure(prop);
+        } catch (IOException e) {
+        }
+        log = Logger.getLogger("TestStep");
+    }
 
     @Test
     public void testPrintMessage() {
