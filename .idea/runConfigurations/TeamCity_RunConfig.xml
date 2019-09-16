@@ -1,6 +1,5 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="TeamCity_RunConfig" type="TestNG">
-    <module name="Projects" />
     <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
     <option name="PACKAGE_NAME" value="" />
     <option name="MAIN_CLASS_NAME" value="" />
@@ -9,6 +8,9 @@
     <option name="TEST_OBJECT" value="SUITE" />
     <option name="PARAMETERS" value="" />
     <option name="OUTPUT_DIRECTORY" value="" />
+    <option name="TEST_SEARCH_SCOPE">
+      <value defaultName="wholeProject" />
+    </option>
     <option name="PROPERTIES_FILE" value="" />
     <properties />
     <listeners />
