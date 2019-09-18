@@ -1,32 +1,28 @@
 package com.interblocks;
 
-import static org.testng.Assert.assertTrue;
-
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.apache.log4j.*;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 /**
  * Unit test for simple App.
  */
 public class AppTest {
-    String message = "Jade";
-    App messageUtil = new App(message);
-    private static Logger log = null;
+    private String message = "Jade";
+    private App messageUtil = new App(message);
+    private static Logger log;
 
-    public AppTest() {
+    @BeforeClass
+    public void setUp() throws IOException {
         String log4JPropertyFile = System.getProperty("user.dir") + "\\src\\log4j.properties";
         Properties prop = new Properties();
-        try {
-            prop.load(new FileInputStream(log4JPropertyFile));
-            PropertyConfigurator.configure(prop);
-            log = Logger.getLogger("TestStep");
-        } catch (Exception e) {
-            log.debug(e);
-        }
+        prop.load(new FileInputStream(log4JPropertyFile));
+        PropertyConfigurator.configure(prop);
+        log = Logger.getLogger("TestStep");
     }
 
     @Test
