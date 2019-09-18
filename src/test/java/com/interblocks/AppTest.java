@@ -14,7 +14,7 @@ import java.util.Properties;
 public class AppTest {
     private String message = "Jade";
     private App messageUtil = new App(message);
-    private static Logger log;
+    private Logger log;
 
     @BeforeClass
     public void setUp() throws IOException {
