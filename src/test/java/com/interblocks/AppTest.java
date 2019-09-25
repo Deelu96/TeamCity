@@ -32,6 +32,13 @@ public class AppTest {
     }
 
     @Test
+    public void tes() {
+        Assert.assertEquals(message, messageUtil.printMessage());
+    }
+
+
+
+    @Test
     public void testSalutationMessage() {
         log.debug("Inside testSalutationMessage()");
         message = "Hi!" + "Jade";
